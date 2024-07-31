@@ -1,0 +1,61 @@
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 30px;
+}
+
+p {
+  font-size: 17px;
+}
+
+.ser_heading {
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.sub_para {
+  font-size: 22px;
+}
+
+.main_heading {
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+a {
+  font-size: 20px;
+}
+
+input[type="text"],
+[type="email"] {
+  padding: 10px;
+  border: 2px solid rgb(197, 190, 197);
+  border-radius: 7px;
+}
+
+.sub_input{
+  width: 595px;
+}
+
+
+.main_input{
+  width:300px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 100%;
+  }
+
+  .sub_input{
+    width:300px;
+  }
+
+  .main_input{
+    width: 150px;
+  }
+}

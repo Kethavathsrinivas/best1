@@ -1,0 +1,257 @@
+.body1 {
+  font-family: Arial, sans-serif;
+}
+
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* margin-left: -50px; */
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  /* margin-left: 60px; */
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+  display: none;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+  /* background-color: #6e977e; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-left: -350px; */
+}
+
+.subnav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  margin-left: -500px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 15px;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #666;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #f06595,
+    #f6c90f,
+    #32a861,
+    #325fa8,
+    #800715,
+    #871158
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s ease infinite;
+  font-weight: bold;
+  padding: 20px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.small-yellow-button {
+  background-color: orange;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  /* margin-left: -10px; */
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  /* padding-left: 30px; */
+}
+
+.small-yellow-button:hover {
+  background-color: #f0e000;
+}
+
+.btn-outline-primary {
+  border-color: #666;
+  color: #666;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn-outline-primary:hover {
+  color: #666;
+}
+
+.subscription-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -20px;
+}
+
+.signbtn {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 17px;
+  height: auto;
+  width: 300px;
+}
+
+.blogs {
+  margin: auto;
+  margin-left: 20px;
+}
+
+.bghover:hover {
+  box-shadow: 5px 10px 5px #492344;
+  background-color: #f8f9fa;
+  background-color: #f8f9fa;
+  color: #666;
+  /* background-color: purple; */
+}
+
+@media (max-width: 767px) {
+  .navbar-custom {
+    flex-direction: column;
+  }
+
+  .navbar-toggler {
+    display: block;
+    border: none;
+    background: none;
+  }
+
+  .navbar-toggler-icon {
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    /* background-color: #8e7676; */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-collapse.open {
+    display: flex;
+  }
+
+  .subnav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 0; /* Adjust the left margin as needed */
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .subscription-container,
+  .signbtn,
+  .blogs {
+    width: 100%;
+  }
+
+  .logo {
+    /* margin: 0 auto; */
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+}

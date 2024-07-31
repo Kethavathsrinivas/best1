@@ -1,0 +1,114 @@
+.join-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: -40px;
+  background-color: #eeeaea;
+}
+
+.join-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: Poppins, sans-serif;
+}
+
+.join-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: chocolate;
+}
+
+.join-register-button {
+  color: darkblue;
+  padding: 10px 20px;
+  border: 2px solid darkblue;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.join-register-button:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.join-image-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-image-row {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px; /* Adjust as needed */
+  justify-content: center;
+  gap: 10px;
+}
+
+.join-image-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px; /* Fixed width for cards */
+  height: 200px; /* Fixed height for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-college-image {
+  width: 45%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.join-nav-button {
+  background-color: darkblue;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: color 0.3s;
+}
+
+.join-nav-button.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: lightcoral;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .join-container {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .join-title {
+    font-size: 20px;
+  }
+
+  .join-description {
+    font-size: 14px;
+  }
+
+  .join-register-button {
+    font-size: 14px;
+  }
+
+  .join-image-row {
+    justify-content: center;
+    gap: 0; /* Remove gap to center single image */
+  }
+
+  .join-image-card {
+    width: 300px; /* Keep same width as desktop */
+    height: 200px; /* Keep same height as desktop */
+  }
+}

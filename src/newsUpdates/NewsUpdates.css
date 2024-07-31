@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.news-updates-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    background: #f7f4f4;
+}
+
+.news-left-box, .news-right-box {
+    width: 45%;
+    height: 90vh;
+    margin-top: 20px;
+}
+
+.news-left-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.news-left-box img {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.news-left-box-content {
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #cccccc93;
+}
+
+.news-smalltext {
+    font-family: cursive;
+    font-size: 15px;
+}
+
+.news-date {
+    color: darkblue;
+}
+
+.news-left-box-content p {
+    margin: 5px 0;
+}
+
+.news-right-box {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 0px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.news-right-box h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 3px solid darkblue;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.news-update-item {
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    /* padding-bottom: 10px; */
+}
+
+.news-update-item p {
+    margin: 5px 0;
+}
+
+.news-update-item .news-date-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    font-size: 14px;
+}
+
+.news-update-item .news-date-admin .news-date {
+    color: darkblue;
+    margin-left: auto;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    .news-updates-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .news-left-box, .news-right-box {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .news-left-box {
+        padding: 20px;
+    }
+
+    .news-left-box-content {
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .news-right-box {
+        padding: 10px;
+    }
+
+    .news-right-box h2 {
+        font-size: 20px;
+    }
+
+    .news-update-item .news-date-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-update-item .news-date-admin .news-date {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}

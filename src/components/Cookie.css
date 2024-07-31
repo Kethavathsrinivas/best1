@@ -1,0 +1,48 @@
+.app {
+  padding: 16px;
+  background-color: #f0f0f0;
+}
+.cookie_container{
+    width:95%;
+    padding:20px;
+    margin:0 auto;
+}
+.shadow-box-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 0px;
+  background-color: white;
+  margin: 16px 0;
+  text-align: justify;
+}
+
+.shadow-box-heading {
+  margin: 0 0 8px;
+  text-align:center;
+  color:blueviolet;
+}
+
+.shadow-box-content {
+  margin: 0;
+}
+.cookie_btn{
+    border-radius: 8px;
+   background-color: blueviolet;
+   color:white;
+   height: 40px;
+   width: 120px;
+   border-color: blueviolet;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cookie_color{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+.cookie_btn:hover{
+    background-color:blueviolet ;
+  transform: scale(1.05);
+}

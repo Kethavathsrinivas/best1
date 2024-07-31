@@ -1,0 +1,255 @@
+.doubt-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  height: 100vh;
+  background: url('../assets/ba3.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  margin-bottom:100px;
+}
+
+.doubt-content {
+  margin-top: 160px;
+  max-width: 35%;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.doubt-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.doubt-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.doubt-faq-button {
+  background-color: darkblue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.doubt-faq-button:hover {
+  background-color: blue;
+}
+
+.doubt-cards-container {
+  width: 80%;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doubt-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-left: 60px;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doubt-question {
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doubt-question.active {
+  font-weight: bold;
+}
+
+.doubt-toggle {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.doubt-answer {
+  margin-top: 10px;
+  font-size: 16px;
+  color: darkslategray;
+}
+
+.doubt-contact-box {
+  position: absolute;
+  bottom: -90px;
+  left: 0;
+  width: 85%;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 20px;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.doubt-contact-content {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.doubt-contact-title {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.doubt-contact-description {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.doubt-contact-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.doubt-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  background-color: green;
+  padding: 5px 30px; /* Adjust the top and bottom padding */
+  border-radius: 10px;
+  margin-right: 0;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.doubt-button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.doubt-button.whatsapp {
+  background-color: white;
+  color: darkblue;
+  border: 1px solid darkblue;
+}
+
+.doubt-button.email {
+  background-color: #007bff;
+}
+
+.doubt-button:hover {
+  opacity: 0.9;
+  border: 2px solid blue;
+}
+
+.doubt-button.whatsapp img,
+.doubt-button.email img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .doubt-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 110vh;
+    margin-bottom: 170px;
+  }
+
+  .doubt-content {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .doubt-title {
+    font-size: 28px;
+  }
+
+  .doubt-description {
+    font-size: 16px;
+  }
+
+  .doubt-faq-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .doubt-cards-container {
+    width: 100%;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .doubt-card {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .doubt-question {
+    font-size: 16px;
+  }
+
+  .doubt-toggle {
+    font-size: 20px;
+  }
+
+  .doubt-answer {
+    font-size: 14px;
+  }
+
+  .doubt-contact-box {
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    /* margin-bottom: 20px; */
+    margin-top: 20px;
+  }
+
+  .doubt-contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doubt-contact-title {
+    font-size: 22px;
+  }
+
+  .doubt-contact-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .doubt-contact-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .doubt-button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .doubt-button img {
+    margin-right: 5px;
+  }
+}

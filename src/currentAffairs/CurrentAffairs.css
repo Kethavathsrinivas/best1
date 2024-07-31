@@ -1,0 +1,139 @@
+.current-affairs-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px;
+    background-color: white;
+  }
+  
+  .affairs-left-side, .affairs-right-side {
+    /* Reset padding for consistency */
+    padding: 0;
+  }
+  
+  .affairs-left-side {
+    width: 75%;
+    margin-right: 10px;
+  }
+  
+  .affairs-right-side {
+    width: 35%;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid darkorchid;
+  }
+  
+  /* Title and subtitle styling */
+  .affairs-latest-title {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .affairs-latest-title .affairs-title-first {
+    display: block;
+  }
+  
+  .affairs-latest-title .affairs-title-second {
+    display: block;
+    margin-top: -5px;
+  }
+  
+  .affairs-sub-title {
+    background-color: violet;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 10px;
+  }
+  
+  .affairs-content p {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    position: relative;
+  }
+  
+  .affairs-undertitle {
+    background: rgb(183, 161, 194);
+  }
+  
+  .affairs-content hr {
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 6px 10px;
+  }
+  
+  .affairs-read-more {
+    color: darkblue;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .affairs-read-more::after {
+    content: '...';
+  }
+  
+  .affairs-right-side {
+    padding: 20px;
+  }
+  
+  .affairs-categories, .affairs-monthly {
+    margin-bottom: 20px;
+  }
+  
+  .affairs-categories h3, .affairs-monthly h3 {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .affairs-categories ul, .affairs-monthly ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .affairs-categories li, .affairs-monthly li {
+    margin-bottom: 5px;
+  }
+  
+  .affairs-categories a, .affairs-monthly a {
+    text-decoration: underline;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .affairs-view-all {
+    color: darkblue;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .current-affairs-container {
+        margin-top: 70px;
+      flex-direction: column; /* Stack elements vertically */
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .affairs-left-side, .affairs-right-side {
+      width: 100%; /* Full width on mobile screens */
+      margin: 0; /* Remove margin for mobile screens */
+    }
+  
+    .affairs-right-side {
+      border: 1px solid darkblue; /* Remove border for mobile view */
+      border-radius: 10px; /* Remove border-radius for mobile view */
+      padding: 10px; /* Adjust padding for mobile screens */
+    }
+  }
+  

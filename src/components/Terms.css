@@ -1,0 +1,52 @@
+.terms {
+    padding: 16px;
+    background-color: #f0f0f0;
+  }
+  .terms_con{
+    width:95%;
+    padding:20px;
+    margin:0 auto;
+  }
+  
+  .shadow-box-container_terms {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    background-color: white;
+    margin: 16px 0;
+    text-align: justify;
+  }
+  
+  .shadow-box-heading_terms {
+    margin: 0 0 8px;
+    font-size:20px;
+     font-weight:bold;
+     text-align: center;
+     color:rgb(87, 11, 159);
+  
+  }
+  
+  .shadow-box-content_terms {
+    margin: 0;
+  }
+  .terms_btn{
+    border-radius: 8px;
+    background-color: blueviolet;
+    color:white;
+    height: 60px;
+    width: 150px;
+    border-color: blueviolet;
+   border: none;
+   text-decoration: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .privacy_color{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+  }
+  .privacy_btn:hover{
+    background-color:blueviolet ;
+    transform: scale(1.05);
+  }
