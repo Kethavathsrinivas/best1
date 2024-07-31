@@ -73,7 +73,7 @@ const MainPage = () => {
               </a>
             </li>
             <div className="subscription-container ">
-              <a href="placed.php" className="nav-link gradient-text">
+              <a href="/Check" className="nav-link gradient-text">
                 CUET Online Subscription
               </a>
               <button className="small-yellow-button">New</button>

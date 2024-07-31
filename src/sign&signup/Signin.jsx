@@ -214,7 +214,7 @@ const Signin = () => {
             </SocialLoginButton>
           </SocialLoginButtons>
         </SocialLoginContainer>
-        <SignupLink href="#">Not registered yet? Sign up here</SignupLink>
+        <SignupLink href="/Signup">Not registered yet? Sign up here</SignupLink>
       </FormContainer>
     </SignInContainer>
   );

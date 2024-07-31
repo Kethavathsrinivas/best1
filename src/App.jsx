@@ -20,6 +20,8 @@ import Terms from "./components/Terms";
 import About from "./About/About";
 import Signin from "./sign&signup/Signin";
 import Blog from "./blog/Blog"
+import Signup from "./sign&signup/Signup"
+import Checkbox from "./subs/App"
 
 function App() {
   return (
@@ -41,8 +43,10 @@ function App() {
         <Route path="/Terms" element={<Terms/>}/>
         <Route path="/About" element={<About/>}/>
         <Route path="/Signin" element={<Signin/>}/>
+        <Route path="/Signup" element={<Signup/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/Blog" element={<Blog/>}/>
+        <Route path="/Check" element={<Checkbox/>}/>
       </Routes>
       <Footer />
     </div>
