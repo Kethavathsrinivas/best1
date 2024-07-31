@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Paytm Secure Online Payment Gateway</title></head><body><script>window.Promise||document.write('<script  src="https://staticpg.paytm.in/common/lib/promise/promise-polyfill.min.js"><\/script>')</script><script>window.addEventListener('message', function(event) {
+        switch (event.data.type) {
+          case 'MAKECALL':
+            invokeCalls(event.data.requests, event.data.id);
+            break;
+          case 'FETCHDATA':
+            fetchOrSetLocalStorage('FETCH', {key: event.data.key});
+            break;
+          case 'SETDATA':
+            fetchOrSetLocalStorage('SET', {key: event.data.key, data: event.data.data});
+            break;
+          case 'FETCHAUTHBUNDLE':
+            fetchAuthBundle(event.data);
+            break;
+        }
+      });
+      /**
+       * Fetch Auth Bundle if not loaded properly
+       * @param {Object} data -> data url
+       * @returns {String}  bundle
+       */
+      function fetchAuthBundle(data)
+      {
+        (function(w, q, o) {
+          w[o] = w[o] || {
+            init() {
+              w[o][q] = arguments;
+            }
+          };
+          fetch(data.requests[0].url+ "?" +Date.now().toString())
+              .then(response => {
+                return response.text();
+              })
+              .then(html => {
+                console.info('OAuth Bundle Fetched: ', html);
+                var sucessResponse = {
+                  key: 'AuthBundleLoad',
+                  res: html,
+                };
+              window.parent.postMessage(sucessResponse, '*');
+              })
+              .catch(error => {
+                var errorResponse = {
+                  key: 'AuthBundleLoad',
+                  error: error,
+                };
+              window.parent.postMessage(errorResponse, '*');
+              });
+        })(window, '_beforeLoadConfig', 'Oauth');
+      }
+
+      function fetchOrSetLocalStorage(type, obj) {
+        try {
+           if(window.localStorage) {
+            switch(type) {
+              case 'FETCH':
+                window.parent.postMessage({type: 'fetchedData', resp: JSON.parse(localStorage.getItem(obj.key))}, '*');
+                break;
+              case 'SET':
+                localStorage.setItem('savedPaymodes', JSON.stringify(obj.data));
+                // window.parent.postMessage({type: 'localStorageData', resp: localStorage.etItem(key))}, '*');
+                break;
+            }
+          }
+        } catch(err) {
+          console.log(err);
+        }
+      }
+
+      function invokeCalls(requests, id) {
+        Promise.all(requests.map(function (request) {
+          return _ajax(request);
+        })).then(
+          function (responses) {
+            var msgResponse = {
+              type: 'successApiCallResponse',
+              responses: responses,
+              id: id
+            };
+            window.parent.postMessage(msgResponse, '*');
+          },
+          function (error) {
+            var msgResponse = {
+              type: 'errorApiCallResponse',
+              response: error,
+              id: id
+            };
+            window.parent.postMessage(msgResponse, '*');
+          }
+        );
+      }
+
+      function addParams(url, query) {
+        url = url + '?';
+        var keys = Object.keys(query),
+          i = 0;
+        while (i < keys.length) {
+          if (query.hasOwnProperty(keys[i])) {
+           /* for deferred orderid is not defined hence not appending that in url*/
+            if(query[keys[i]]) {
+              url = url + keys[i] + '=' + query[keys[i]] + '&';
+            }
+
+          }
+          i++;
+        }
+        return url;
+      }
+      /**
+       * Trim the `&` and `?` from api url
+       * @param {String} apiUrl - api url
+       * @returns {String}  api url
+       */
+      function seperatorCharTrim(apiUrl) {
+        return apiUrl.replace(/\?+$/g, '').replace(/&+$/g, '');
+      }
+      function _ajax(data) {
+        return new Promise(function(resolve, reject) {
+          var xhr = new window.XMLHttpRequest();
+          if (data.query) {
+            data.url = data.url
+              ? addParams(data.url, data.query)
+              : addParams(data.targetURL, data.query);
+          }
+          var apiUrl = seperatorCharTrim(data.targetURL || data.url);
+          xhr.open(data.method, apiUrl);
+          if(data &&  Object.prototype.toString.call(data.headers) === '[object Object]'){
+            Object.keys(data.headers).forEach(function(key){
+              xhr.setRequestHeader(key, data.headers[key]);
+            });
+          }
+          xhr.setRequestHeader('Content-type', 'application/json');
+          xhr.onreadystatechange = function onReadyStateChange() {
+            if (this.readyState == 4) {
+              var readyState = {};
+              if (this.status >= 200 && this.status < 400) {
+                resolve(JSON.parse(this.responseText));
+              }
+
+              if (this.status >= 400 && this.status <= 599) {
+                reject(JSON.parse(this.responseText));
+              }
+            }
+          };
+          if (data.data) {
+            xhr.send(JSON.stringify(data.data));
+          } else {
+            xhr.send();
+          }
+        });
+      }</script></body></html>
